@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @package     selectwizard
  * @since       16.02.20 - 10:08
+ *
  * @author      Patrick Froch <info@easySolutionsIT.de>
+ *
  * @see         http://easySolutionsIT.de
+ *
  * @copyright   e@sy Solutions IT 2020
  * @license     LGPL-3.0-only
  */
@@ -13,7 +15,6 @@ declare(strict_types=1);
 
 namespace Esit\Selectwizard\Classes\Listener;
 
-use Contao\BackendTemplate;
 use Esit\Selectwizard\Classes\Events\OnGenerateWidgetEvent;
 use Esit\Selectwizard\Classes\Services\AssetHandler;
 use Esit\Selectwizard\Classes\Services\SelectHandler;
@@ -23,6 +24,7 @@ class OnGenerateWidgetListener
 {
     /**
      * OnGenerateWidgetListener constructor.
+     *
      * @param AssetHandler  $assetHandler
      * @param SelectHandler $selectHandler
      */
@@ -36,6 +38,7 @@ class OnGenerateWidgetListener
 
     /**
      * Fügt die Assets ein.
+     *
      * @param OnGenerateWidgetEvent $event
      */
     public function insertCss(OnGenerateWidgetEvent $event): void
@@ -50,6 +53,7 @@ class OnGenerateWidgetListener
 
     /**
      * Fügt die Assets ein.
+     *
      * @param OnGenerateWidgetEvent $event
      */
     public function insertJs(OnGenerateWidgetEvent $event): void
@@ -64,6 +68,7 @@ class OnGenerateWidgetListener
 
     /**
      * Erstellt das initiale Widget, wenn noch keine Werte vorhanden sind.
+     *
      * @param OnGenerateWidgetEvent $event
      */
     public function generateWidgets(OnGenerateWidgetEvent $event): void
@@ -87,6 +92,7 @@ class OnGenerateWidgetListener
 
     /**
      * Erstellt eine Instanz des Ausgabetemplates.
+     *
      * @param OnGenerateWidgetEvent $event
      */
     public function createTemplate(OnGenerateWidgetEvent $event): void
@@ -102,6 +108,7 @@ class OnGenerateWidgetListener
 
     /**
      * Fügt dem Template die Daten hinzu.
+     *
      * @param OnGenerateWidgetEvent $event
      */
     public function addDataToTemplate(OnGenerateWidgetEvent $event): void
@@ -120,6 +127,7 @@ class OnGenerateWidgetListener
 
     /**
      * Erstellt den Inhalt des Widgets.
+     *
      * @param OnGenerateWidgetEvent $event
      */
     public function parseOutput(OnGenerateWidgetEvent $event): void

@@ -1,26 +1,31 @@
 {
-    "name": "esit/selectwizard",
+    "name": "patrickfroch/selectwizard",
     "description": "Es handelt sich bei dieser Erweiterung für das Open Source CMS Contao um ein Backend Widget, dass eine variable Liste an Auswahlfeldern zur Verfügung stellt.",
-    "license": "LGPL-3.0-only",
+    "license": "LGPL-3.0-or-later",
     "type": "contao-bundle",
     "authors": [
         {
             "name": "Patrick Froch",
-            "email": "info@easySolutionsIT.de",
-            "homepage": "http://easySolutionsIT.de",
+            "email": "hallo@patrick-froch.de",
+            "homepage": "https://patrick-froch.de",
             "role": "Developer"
         }
     ],
     "support": {
-        "email": "info@easySolutionsIT.de"
+        "email": "hallo@patrick-froch.de",
+        "issues": "https://github.com/patrickfroch/selectwizard/issues",
+        "docs": "https://github.com/patrickfroch/selectwizard/blob/main/README.md"
     },
     "require": {
-        "php": "~8.0",
-        "contao/core-bundle": "~4.9|^5.1"
+        "php": "^8.1",
+        "contao/core-bundle": "~4.13|^5.0"
     },
     "require-dev": {
-        "contao/test-case": "^4.13",
-        "phpunit/phpunit": "^9.5"
+        "contao/test-case": "~4.13|^5.0",
+        "phpunit/phpunit": "^9.5|^12.0",
+        "phpstan/phpstan": "^2.1",
+        "symplify/easy-coding-standard": "^13.0",
+        "squizlabs/php_codesniffer": "^4.0"
     },
     "autoload": {
         "psr-4": {

@@ -3,7 +3,6 @@
  * @author      pfroch <info@easySolutionsIT.de>
  * @link        http://easySolutionsIT.de
  * @copyright   e@sy Solutions IT 2022
- * @license     EULA
  * @package     Selectwizard
  * @since       22.09.2022 - 20.50
  */

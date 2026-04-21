@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @package     selectwizard
  * @since       16.02.20 - 12:43
+ *
  * @author      Patrick Froch <info@easySolutionsIT.de>
- * @link        http://easySolutionsIT.de
+ *
+ * @see        http://easySolutionsIT.de
+ *
  * @copyright   e@sy Solutions IT 2020
  * @license     LGPL-3.0-only
  */
@@ -26,7 +28,7 @@ class SelectHandlerTest extends EsitTestCase
     {
         $config = [
             'options' => [
-                ['value'=>'test01','label'=>'Test 01'],
+                ['value'=>'test01', 'label'=>'Test 01'],
                 ['value'=>'test02', 'label'=>'Test 02']
             ]
         ];
@@ -35,8 +37,8 @@ class SelectHandlerTest extends EsitTestCase
         $select         = $this->mockClassWithProperties(SelectMenu::class);
         $factory        = $this->getMockBuilder(WidgetFactory::class)->disableOriginalConstructor()->getMock();
         $selectHandler  = new SelectHandler($factory);
-        $factory->expects(self::once())->method('createSelectMenu')->willReturn($select);
-        $select->expects(self::exactly(3))->method('__set');
+        $factory->expects($this->once())->method('createSelectMenu')->willReturn($select);
+        $select->expects($this->exactly(3))->method('__set');
         // todo Einzelne Werte Prüfen, withConsecutive() ist deprecated!
 
         $rtn            = $selectHandler->createSelect($cssId, $config, $value);
@@ -48,7 +50,7 @@ class SelectHandlerTest extends EsitTestCase
     {
         $config = [
             'options' => [
-                ['value'=>'test01','label'=>'Test 01'],
+                ['value'=>'test01', 'label'=>'Test 01'],
                 ['value'=>'test02', 'label'=>'Test 02']
             ]
         ];
@@ -57,8 +59,8 @@ class SelectHandlerTest extends EsitTestCase
         $select         = $this->mockClassWithProperties(SelectMenu::class);
         $factory        = $this->getMockBuilder(WidgetFactory::class)->disableOriginalConstructor()->getMock();
         $selectHandler  = new SelectHandler($factory);
-        $factory->expects(self::once())->method('createSelectMenu')->willReturn($select);
-        $select->expects(self::exactly(4))->method('__set');
+        $factory->expects($this->once())->method('createSelectMenu')->willReturn($select);
+        $select->expects($this->exactly(4))->method('__set');
         // todo Einzelne Werte Prüfen, withConsecutive() ist deprecated!
 
         $rtn            = $selectHandler->createSelect($cssId, $config, $value);

@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @package     selectwizard
  * @since       15.02.20 - 21:40
+ *
  * @author      Patrick Froch <info@easySolutionsIT.de>
+ *
  * @see         http://easySolutionsIT.de
+ *
  * @copyright   e@sy Solutions IT 2020
  * @license     LGPL-3.0-only
  */
@@ -26,9 +28,11 @@ class SelectHandler
 
     /**
      * Erzeugt die einzelnen Auswahlfelder.
-     * @param  string     $cssId
-     * @param  mixed[]    $config
-     * @param  ?mixed     $value
+     *
+     * @param string  $cssId
+     * @param mixed[] $config
+     * @param ?mixed  $value
+     *
      * @return SelectMenu
      */
     public function createSelect(string $cssId, array $config, mixed $value = null): SelectMenu

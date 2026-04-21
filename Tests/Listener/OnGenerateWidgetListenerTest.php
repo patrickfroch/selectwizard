@@ -1,9 +1,12 @@
 <?php
+
 /**
- * @package     selectwizard
  * @since       16.02.20 - 13:16
+ *
  * @author      Patrick Froch <info@easySolutionsIT.de>
- * @link        http://easySolutionsIT.de
+ *
+ * @see        http://easySolutionsIT.de
+ *
  * @copyright   e@sy Solutions IT 2020
  * @license     LGPL-3.0-only
  */
@@ -131,9 +134,9 @@ class OnGenerateWidgetListenerTest extends EsitTestCase
 
     public function testCreateTemplateDoNothingIfTemplateNameIsNotGiven(): void
     {
-        $this->templateFactory->expects(self::never())->method('createBackendTemplate');
+        $this->templateFactory->expects($this->never())->method('createBackendTemplate');
         $this->listener->createTemplate($this->event);
-        self::assertEmpty($this->event->getTemplate());
+        $this->assertEmpty($this->event->getTemplate());
     }
 
 
@@ -143,14 +146,14 @@ class OnGenerateWidgetListenerTest extends EsitTestCase
         $template   = $this->mockClassWithProperties(BackendTemplate::class);
 
         $this->templateFactory
-            ->expects(self::once())
+            ->expects($this->once())
             ->method('createBackendTemplate')
             ->with($name)
             ->willReturn($template);
 
         $this->event->setTemplateName($name);
         $this->listener->createTemplate($this->event);
-        self::assertSame($template, $this->event->getTemplate());
+        $this->assertSame($template, $this->event->getTemplate());
     }
 
 
@@ -158,7 +161,7 @@ class OnGenerateWidgetListenerTest extends EsitTestCase
     {
         $this->listener->addDataToTemplate($this->event);
         $template = $this->event->getTemplate();
-        self::assertEmpty($template);
+        $this->assertEmpty($template);
     }
 
 
@@ -172,8 +175,8 @@ class OnGenerateWidgetListenerTest extends EsitTestCase
         $this->event->setMscLang(['Language']);
         $this->event->setConfiguration(['config']);
 
-        $matcher = self::exactly(4);
-        $template->expects(self::once())->method('setData')->with(['config']);
+        $matcher = $this->exactly(4);
+        $template->expects($this->once())->method('setData')->with(['config']);
         $template->expects($matcher)->method('__set');
         // todo Einzelne Werte Prüfen, withConsecutive() ist deprecated!
 
@@ -184,7 +187,7 @@ class OnGenerateWidgetListenerTest extends EsitTestCase
     public function testParseOutputDoNothingIfTemplateIsNull(): void
     {
         $this->listener->parseOutput($this->event);
-        self::assertEmpty($this->event->getOutput());
+        $this->assertEmpty($this->event->getOutput());
     }
 
 
@@ -196,6 +199,6 @@ class OnGenerateWidgetListenerTest extends EsitTestCase
 
         $this->event->setTemplate($template);
         $this->listener->parseOutput($this->event);
-        self::assertSame('output', $this->event->getOutput());
+        $this->assertSame('output', $this->event->getOutput());
     }
 }

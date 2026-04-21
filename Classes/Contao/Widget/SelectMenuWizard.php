@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @package     selectwizard
  * @since       14.02.20 - 16:34
+ *
  * @author      Patrick Froch <info@easySolutionsIT.de>
+ *
  * @see         http://easySolutionsIT.de
+ *
  * @copyright   e@sy Solutions IT 2020
  * @license     LGPL-3.0-only
  */
@@ -22,6 +24,7 @@ class SelectMenuWizard extends Widget
 {
     /**
      * Submit user input
+     *
      * @var bool
      */
     protected $blnSubmitInput = true;
@@ -29,6 +32,7 @@ class SelectMenuWizard extends Widget
 
     /**
      * Template
+     *
      * @var string
      */
     protected $strTemplate = 'be_widget';
@@ -36,6 +40,7 @@ class SelectMenuWizard extends Widget
 
     /**
      * Name des Ausgabetemplates
+     *
      * @var string
      */
     protected string $widgetTemplate = 'be_select_menu_wizard';
@@ -50,21 +55,19 @@ class SelectMenuWizard extends Widget
         $di     = System::getContainer()->get('event_dispatcher');
         $event  = new OnGenerateWidgetEvent();
 
-        $event->setConfiguration((array)$this->arrConfiguration);
-        $event->setFieldId((string)$this->strId);
-        $event->setLabel((string)$this->strLabel);
-        $event->setValues((array)$this->varValue);
+        $event->setConfiguration((array) $this->arrConfiguration);
+        $event->setFieldId((string) $this->strId);
+        $event->setLabel((string) $this->strLabel);
+        $event->setValues((array) $this->varValue);
         $event->setTemplateName($this->widgetTemplate);
         $event->setTlCss(['bundles/esitselectwizard/css/selectlistfix.css']);
         $event->setTlJavascript(['bundles/esitselectwizard/js/ListInitializer.js']);
 
-        if (\is_array($GLOBALS['TL_LANG']['MSC'])) {
+        if (\is_array($GLOBALS['TL_LANG']['MSC'])) { // @phpstan-ignore offsetAccess.nonOffsetAccessible
             $event->setMscLang($GLOBALS['TL_LANG']['MSC']);
         }
 
-        if (null !== $di) {
-            $di->dispatch($event);
-        }
+        $di->dispatch($event);
 
         return $event->getOutput();
     }

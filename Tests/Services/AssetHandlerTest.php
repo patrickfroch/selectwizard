@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @package     selectwizard
  * @since       16.02.20 - 11:44
+ *
  * @author      Patrick Froch <info@easySolutionsIT.de>
- * @link        http://easySolutionsIT.de
+ *
+ * @see        http://easySolutionsIT.de
+ *
  * @copyright   e@sy Solutions IT 2020
  * @license     LGPL-3.0-only
  */

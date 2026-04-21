@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @package     Selectwizard
  * @since       14.02.2020 - 10:26
+ *
  * @author      Patrick Froch <info@easySolutionsIT.de>
+ *
  * @see         http://easySolutionsIT.de
+ *
  * @copyright   e@sy Solutions IT 2020
  * @license     LGPL-3.0-only
  */
@@ -21,6 +23,7 @@ class OnGenerateWidgetEvent extends Event
 {
     /**
      * Liste der CSS-Dateien
+     *
      * @var string[]
      */
     protected array $tlCss = [];
@@ -28,6 +31,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Liste der JavaScript-Dateien
+     *
      * @var string[]
      */
     protected array $tlJavascript = [];
@@ -35,6 +39,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Id über die das Feld angesprochen werden kann
+     *
      * @var string
      */
     protected string $fieldId = '';
@@ -42,6 +47,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Label für das Widget
+     *
      * @var string
      */
     protected string $label = '';
@@ -49,6 +55,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Werte des Eingabefelds
+     *
      * @var mixed[]
      */
     protected array $values = [];
@@ -56,6 +63,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Konfiguration des Widgets
+     *
      * @var string[]
      */
     protected array $configuration = [];
@@ -63,13 +71,15 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Sprachdatei für die Übersetzung
-     * @var string[]
+     *
+     * @var mixed[]
      */
     protected array $mscLang = [];
 
 
     /**
      * Array mit den einzelnen Widgets der Auswahlfelder
+     *
      * @var SelectMenu[]
      */
     protected array $selects = [];
@@ -77,6 +87,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Name des Widget-Templates
+     *
      * @var string
      */
     protected string $templateName = '';
@@ -84,6 +95,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Template-Objekt
+     *
      * @var ?BackendTemplate
      */
     protected ?BackendTemplate $template = null;
@@ -91,6 +103,7 @@ class OnGenerateWidgetEvent extends Event
 
     /**
      * Output des Widgets
+     *
      * @var string
      */
     protected string $output = '';
@@ -205,7 +218,7 @@ class OnGenerateWidgetEvent extends Event
 
 
     /**
-     * @return string[]
+     * @return mixed[]
      */
     public function getMscLang(): array
     {
@@ -214,7 +227,7 @@ class OnGenerateWidgetEvent extends Event
 
 
     /**
-     * @param string[] $mscLang
+     * @param mixed[] $mscLang
      */
     public function setMscLang(array $mscLang): void
     {
@@ -259,7 +272,7 @@ class OnGenerateWidgetEvent extends Event
 
 
     /**
-     * @return null|BackendTemplate
+     * @return BackendTemplate|null
      */
     public function getTemplate(): ?BackendTemplate
     {
