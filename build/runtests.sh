@@ -160,10 +160,18 @@ fi
 ## PHPUnit
 if [ -f ../../../vendor/bin/phpunit ] && [ -d ./Tests ]
 then
+    phpunitversion=`../../../vendor/bin/phpunit --version`
+    phpunitconfig="${configFolder}/phpunit/phpunit-12.xml.dist"
+
+    if [[ "$phpunitversion" == "PHPUnit 9."* ]]
+    then
+        phpunitconfig="${configFolder}/phpunit/phpunit-9.xml.dist"
+    fi
+
     # PHPUnit gobal mit composer installiert
     echo
     myecho "Führe UnitTests mit globalem PHPUnit durch"
-    XDEBUG_MODE=coverage ${PHP} -d error_reporting="E_ALL & ~E_DEPRECATED & ~E_STRICT" ../../../vendor/bin/phpunit --configuration ${configFolder}/phpunit/phpunit.xml.dist $TESTDOX
+    XDEBUG_MODE=coverage ${PHP} -d error_reporting="E_ALL & ~E_DEPRECATED & ~E_STRICT" ../../../vendor/bin/phpunit --configuration ${phpunitconfig} $TESTDOX
     tmperr=$?
 
     if [ ${tmperr} -ne 0 ]

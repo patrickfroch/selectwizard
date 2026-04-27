@@ -61,6 +61,4 @@ $testCase       = __DIR__ . '/EsitTestCase.php';
 
 if (is_file($testCase)) {
     include_once($testCase);
-} else {
-    throw new \Exception('Testcase is missing: ' . $testCase);
 }

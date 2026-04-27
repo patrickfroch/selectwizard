@@ -16,15 +16,17 @@ declare(strict_types=1);
 namespace Esit\Selectwizard\Tests\Listener;
 
 use Contao\BackendTemplate;
+use Contao\TestCase\ContaoTestCase;
 use Esit\Selectwizard\Classes\Events\OnGenerateWidgetEvent;
 use Esit\Selectwizard\Classes\Listener\OnGenerateWidgetListener;
 use Esit\Selectwizard\Classes\Services\AssetHandler;
 use Esit\Selectwizard\Classes\Services\SelectHandler;
 use Esit\Selectwizard\Classes\Services\TemplateFactory;
-use Esit\Selectwizard\EsitTestCase;
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use PHPUnit\Framework\MockObject\MockObject;
 
-class OnGenerateWidgetListenerTest extends EsitTestCase
+#[AllowMockObjectsWithoutExpectations]
+class OnGenerateWidgetListenerTest extends ContaoTestCase
 {
 
     /**

@@ -16,11 +16,11 @@ declare(strict_types=1);
 namespace Esit\Selectwizard\Tests\Services;
 
 use Contao\SelectMenu;
+use Contao\TestCase\ContaoTestCase;
 use Esit\Selectwizard\Classes\Services\SelectHandler;
 use Esit\Selectwizard\Classes\Services\WidgetFactory;
-use Esit\Selectwizard\EsitTestCase;
 
-class SelectHandlerTest extends EsitTestCase
+class SelectHandlerTest extends ContaoTestCase
 {
 
 
